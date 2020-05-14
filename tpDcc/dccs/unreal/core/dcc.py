@@ -7,11 +7,14 @@ Module that contains DCC functionality for standalone applications
 
 from __future__ import print_function, division, absolute_import
 
+from Qt.QtWidgets import *
+
 import tpDcc
 from tpDcc import register
 from tpDcc.abstract import dcc as abstract_dcc
 
-from Qt.QtWidgets import *
+import unreal
+from tpDcc.dccs.unreal.core import helpers
 
 
 class UnrealDcc(abstract_dcc.AbstractDCC, object):
@@ -60,7 +63,8 @@ class UnrealDcc(abstract_dcc.AbstractDCC, object):
         :return: int
         """
 
-        return 0
+        return helpers.get_unreal_version()
+
 
     @staticmethod
     def get_version_name():
@@ -69,7 +73,7 @@ class UnrealDcc(abstract_dcc.AbstractDCC, object):
         :return: str
         """
 
-        return '0.0.0'
+        return helpers.get_unreal_version_name()
 
     @staticmethod
     def is_batch():
@@ -135,7 +139,7 @@ class UnrealDcc(abstract_dcc.AbstractDCC, object):
         :return:
         """
 
-        print('WARNING: {}'.format(message))
+        unreal.log_warning(message)
 
     @staticmethod
     def error(message):
@@ -145,7 +149,17 @@ class UnrealDcc(abstract_dcc.AbstractDCC, object):
         :return:
         """
 
-        print('ERROR: {}'.format(message))
+        unreal.log_error(message)
+
+    @staticmethod
+    def is_window_floating(window_name):
+        """
+        Returns whether or not DCC window is floating
+        :param window_name: str
+        :return: bool
+        """
+
+        return False
 
 
 register.register_class('Dcc', UnrealDcc)
