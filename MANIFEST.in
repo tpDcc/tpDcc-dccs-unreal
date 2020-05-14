@@ -1,0 +1,4 @@
+include tpDcc/dccs/unreal/__logging__.ini
+recursive-include tpDcc/dccs/unreal/resources/* *.*
+include versioneer.py
+include tpDcc/dccs/unreal/_version.py

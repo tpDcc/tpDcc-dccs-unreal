@@ -1,0 +1,8 @@
+# ===================================================================
+# tpDcc-dccs-unreal requirements file
+# ===================================================================
+
+euclid
+tpDcc-core
+tpDcc-libs-python
+tpDcc-libs-qt
