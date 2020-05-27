@@ -76,4 +76,3 @@ def register_resources():
     resources_manager = tpDcc.ResourcesMgr()
     resources_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources')
     resources_manager.register_resource(resources_path, key=tpDcc.Dccs.Unreal)
-

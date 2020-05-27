@@ -65,7 +65,6 @@ class UnrealDcc(abstract_dcc.AbstractDCC, object):
 
         return helpers.get_unreal_version()
 
-
     @staticmethod
     def get_version_name():
         """
