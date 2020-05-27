@@ -1,0 +1,7 @@
+tpDcc.dccs.unreal.core.dcc module
+=================================
+
+.. automodule:: tpDcc.dccs.unreal.core.dcc
+   :members:
+   :undoc-members:
+   :show-inheritance:

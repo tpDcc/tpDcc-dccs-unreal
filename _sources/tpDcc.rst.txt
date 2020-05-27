@@ -1,0 +1,18 @@
+tpDcc package
+=============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   tpDcc.dccs
+
+Module contents
+---------------
+
+.. automodule:: tpDcc
+   :members:
+   :undoc-members:
+   :show-inheritance:

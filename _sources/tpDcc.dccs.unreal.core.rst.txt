@@ -1,0 +1,19 @@
+tpDcc.dccs.unreal.core package
+==============================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   tpDcc.dccs.unreal.core.dcc
+   tpDcc.dccs.unreal.core.helpers
+
+Module contents
+---------------
+
+.. automodule:: tpDcc.dccs.unreal.core
+   :members:
+   :undoc-members:
+   :show-inheritance:
