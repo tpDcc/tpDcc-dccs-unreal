@@ -2,5 +2,5 @@
 # tpDcc-dccs-unreal requirements file
 # ===================================================================
 tpDcc-libs-python
-tpDcc-libs-core
+tpDcc-core
 tpDcc-libs-qt
