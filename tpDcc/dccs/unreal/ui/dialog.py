@@ -9,32 +9,31 @@ from __future__ import print_function, division, absolute_import
 
 import os
 
-from tpDcc import register
 from tpDcc.libs.python import path as path_utils
-from tpDcc.libs.qt.core import dialog as core_dialog
+from tpDcc.libs.qt.widgets import dialog
 
 
-class UnrealDialog(core_dialog.Dialog, object):
+class UnrealDialog(dialog.BaseDialog, object):
     def __init__(self, name='UnrealDialog', parent=None, **kwargs):
         super(UnrealDialog, self).__init__(name=name, parent=parent, **kwargs)
 
 
-class UnrealOpenFileDialog(core_dialog.OpenFileDialog, object):
+class UnrealOpenFileDialog(dialog.BaseOpenFileDialog, object):
     def __init__(self, name='UnrealOpenFileDialog', parent=None, **kwargs):
         super(UnrealOpenFileDialog, self).__init__(name=name, parent=parent, **kwargs)
 
 
-class UnrealSaveFileDialog(core_dialog.SaveFileDialog, object):
+class UnrealSaveFileDialog(dialog.BaseSaveFileDialog, object):
     def __init__(self, name='UnrealSaveFileDialog', parent=None, **kwargs):
         super(UnrealSaveFileDialog, self).__init__(name=name, parent=parent, **kwargs)
 
 
-class UnrealSelectFolderDialog(core_dialog.SelectFolderDialog, object):
+class UnrealSelectFolderDialog(dialog.BaseSelectFolderDialog, object):
     def __init__(self, name='UnrealSelectFolderDialog', parent=None, **kwargs):
         super(UnrealSelectFolderDialog, self).__init__(name=name, parent=parent, **kwargs)
 
 
-class UnrealNativeDialog(core_dialog.NativeDialog, object):
+class UnrealNativeDialog(dialog.BaseNativeDialog, object):
 
     @staticmethod
     def open_file(title='Open File', start_directory=None, filters=None):
@@ -50,7 +49,7 @@ class UnrealNativeDialog(core_dialog.NativeDialog, object):
         clean_path = path_utils.clean_path(start_directory)
         # file_path = directory.select_file_dialog(title=title, start_directory=clean_path, pattern=filters)
 
-        return file_path
+        # return file_path
 
     @staticmethod
     def save_file(title='Save File', start_directory=None, filters=None):
@@ -66,7 +65,7 @@ class UnrealNativeDialog(core_dialog.NativeDialog, object):
         clean_path = path_utils.clean_path(start_directory)
         # file_path = directory.save_file_dialog(title=title, start_directory=clean_path, pattern=filters)
 
-        return file_path
+        # return file_path
 
     @staticmethod
     def select_folder(title='Select Folder', start_directory=None):
@@ -81,11 +80,4 @@ class UnrealNativeDialog(core_dialog.NativeDialog, object):
         clean_path = path_utils.clean_path(start_directory)
         # folder_path = directory.select_folder_dialog(title=title, start_directory=clean_path)
 
-        return folder_path
-
-
-register.register_class('Dialog', UnrealDialog)
-register.register_class('OpenFileDialog', UnrealOpenFileDialog)
-register.register_class('SaveFileDialog', UnrealSaveFileDialog)
-register.register_class('SelectFolderDialog', UnrealSelectFolderDialog)
-register.register_class('NativeDialog', UnrealNativeDialog)
+        # return folder_path

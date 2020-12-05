@@ -9,15 +9,12 @@ from __future__ import print_function, division, absolute_import
 
 import unreal
 
-from tpDcc import register
-from tpDcc.libs.qt.core import window as core_window
+from tpDcc.libs.qt.widgets import window
 
 
-class UnrealWindow(core_window.MainWindow, object):
+class UnrealWindow(window.MainWindow, object):
     def __init__(self, *args, **kwargs):
-
         parent = kwargs.get('parent', None)
-
         super(UnrealWindow, self).__init__(*args, **kwargs)
 
         if not parent:
@@ -37,8 +34,3 @@ class UnrealWindow(core_window.MainWindow, object):
     # def _on_unreal_window_close(self):
     #     if self._tick_handle:
     #         unreal.unregister_slate_post_tick_callback(self._tick_handle)
-
-
-register.register_class('Window', UnrealWindow)
-register.register_class('DockWindow', UnrealWindow)
-register.register_class('SubWindow', UnrealWindow)
