@@ -1,6 +1,8 @@
 # ===================================================================
 # tpDcc-dccs-unreal requirements file
 # ===================================================================
+natsort==6.2.1;python_version < '3'
+natsort==7.1.0;python_version >= '3'
 tpDcc-libs-python
 tpDcc-core
 tpDcc-libs-qt
