@@ -60,3 +60,4 @@ def register_resources():
 
     resources_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resources')
     resources.register_resource(resources_path, key=dcc.Dccs.Unreal)
+

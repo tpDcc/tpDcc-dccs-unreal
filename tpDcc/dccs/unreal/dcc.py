@@ -10,6 +10,7 @@ import unreal
 from Qt.QtWidgets import QDialogButtonBox
 
 from tpDcc.core import dcc
+from tpDcc.libs.python import decorators
 from tpDcc.dccs.unreal.core import helpers
 
 
@@ -34,6 +35,7 @@ def get_extensions():
     """
 
     return ['.uproject']
+
 
 def get_version():
     """
@@ -68,6 +70,7 @@ def enable_component_selection():
     """
 
     pass
+
 
 # =================================================================================================================
 # GUI
@@ -160,3 +163,30 @@ def confirm_dialog(title, message, button=None, cancel_button=None, default_butt
 
     return messagebox.MessageBox.question(None, title=title, text=message, buttons=buttons)
 
+
+# =================================================================================================================
+# DECORATORS
+# =================================================================================================================
+
+def undo_decorator():
+    """
+    Returns undo decorator for current DCC
+    """
+
+    return decorators.empty_decorator
+
+
+def repeat_last_decorator(command_name=None):
+    """
+    Returns repeat last decorator for current DCC
+    """
+
+    return decorators.empty_decorator(command_name)
+
+
+def restore_selection_decorator():
+    """
+    Returns decorators that selects again the objects that were selected before executing the decorated function
+    """
+
+    return decorators.empty_decorator
